@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ListComponent({ allTasks }) {
+export default function ListComponent({ allTasks, emptyButtonClickHandler }) {
   return (
     <div>
       <ol>
@@ -8,6 +8,11 @@ export default function ListComponent({ allTasks }) {
           <li key={index}>{task}</li>
         ))}
       </ol>
+      <div className='emptyButtonConatiner'>
+        <button className='emptyButton' onClick={emptyButtonClickHandler}>
+          empty
+        </button>
+      </div>
     </div>
   );
 }

@@ -2,3 +2,14 @@
   font-family: sans-serif;
   text-align: center;
 }
+.emptyButtonConatiner{
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  width: 60%;
+}
+.emptyButton{
+  padding: 4px;
+  background-color: red;
+  box-shadow: 2px;
+}
