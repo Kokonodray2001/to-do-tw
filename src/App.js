@@ -1,8 +1,11 @@
+import Header from "./component/Header";
+import ListComponent from "./component/ListComponent";
+
 function App() {
   return (
     <div className='Application'>
-      <h1>Aye Captain! 🫡</h1>
-      <h2>Lets create something!</h2>
+      <Header />
+      <ListComponent />
     </div>
   );
 }
