@@ -10,17 +10,11 @@ function App() {
     "Sleep for 2 hours",
     "Take a shower",
   ]);
-  const emptyButtonClickHandler = () => {
-    setTasks(["Nothing to do buddy. Sleep!"]);
-  };
 
   return (
     <div className='Application'>
       <Header />
-      <ListComponent
-        allTasks={tasks}
-        emptyButtonClickHandler={emptyButtonClickHandler}
-      />
+      <ListComponent allTasks={tasks} setAllTask={setTasks} />
     </div>
   );
 }

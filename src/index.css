@@ -2,6 +2,18 @@
   font-family: sans-serif;
   text-align: center;
 }
+.taskList{
+  list-style-type: none; 
+}
+.taskButton{
+  padding-top: 4px;
+  width: 200px;
+  margin: 2px;
+}
+.taskButton:hover{
+  cursor: pointer;
+}
+
 .emptyButtonConatiner{
   display: flex;
   flex-direction: row;
