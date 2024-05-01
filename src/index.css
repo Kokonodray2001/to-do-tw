@@ -1,27 +1,42 @@
 .Application {
   font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  align-content: center;
+}
+.headerText{
   text-align: center;
+  color: gray
+
 }
 .taskList{
   list-style-type: none; 
 }
 .taskButton{
   padding-top: 4px;
+  padding-bottom: 4px;
   width: 200px;
   margin: 2px;
 }
 .taskButton:hover{
   cursor: pointer;
 }
-
-.emptyButtonConatiner{
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-  width: 60%;
-}
 .emptyButton{
-  padding: 4px;
+  padding: 5px; 
+  margin-left: 40px;
   background-color: red;
+  color: aliceblue;
+  font-weight: bold;
   box-shadow: 2px;
+  width: 200px;  
+}
+.emptyButton:hover{
+  cursor: pointer;
+  background-color: crimson;
+  box-shadow: 10px;
+}
+.emptyText{
+  font-style: italic;
+  font-size: small;
 }

@@ -1,16 +1,31 @@
 import React, { useState } from "react";
-
+var count = 0;
 export default function ListComponent({ allTasks, setAllTask }) {
   const [strikes, setStrikes] = useState(Array(allTasks.length).fill(false));
+  const [empty, setEmpty] = useState(true);
+
   const taskButtonClickHndler = (index) => {
     const newStriks = [...strikes];
+
     newStriks[index] = !newStriks[index];
+    if (newStriks[index] === true) count++;
+    else count--;
+    if (count === 0) setEmpty(true);
+    else setEmpty(false);
     setStrikes(newStriks);
+    console.log(count);
   };
   const emptyButtonClickHandler = () => {
+    if (count === 0) {
+      setAllTask([]);
+      return;
+    }
+
     const newAllTask = allTasks.filter(
       (task, index) => strikes[index] === false
     );
+    setEmpty(true);
+    count = 0;
     setAllTask(newAllTask);
     setStrikes(Array(allTasks.length).fill(false));
   };
@@ -30,12 +45,15 @@ export default function ListComponent({ allTasks, setAllTask }) {
             </button>
           </li>
         ))}
+        {allTasks.length === 0 ? (
+          <li className='emptyText'>Nothing to do buddy. Sleep!</li>
+        ) : (
+          <li></li>
+        )}
       </ul>
-      <div className='emptyButtonConatiner'>
-        <button className='emptyButton' onClick={emptyButtonClickHandler}>
-          Remove Completed
-        </button>
-      </div>
+      <button className='emptyButton' onClick={emptyButtonClickHandler}>
+        {empty ? "Empty" : "Remove Completed"}
+      </button>
     </div>
   );
 }
