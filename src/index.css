@@ -40,3 +40,16 @@
   font-style: italic;
   font-size: small;
 }
+.addTaskButton{
+  padding: 5px; 
+  margin-left: 40px;
+  background-color: green;
+  background: transparent;
+  color: aliceblue;
+  font-weight: bold;
+  box-shadow: 2px;
+  width: 200px;
+}
+.addTaskButton:hover{
+  cursor: pointer;
+}
